@@ -18,6 +18,7 @@ object Deps {
     object Modules{
         const val path = "path"
         const val database = ":common:database"
+        const val datastore = ":common:datastore"
     }
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }

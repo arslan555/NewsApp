@@ -53,6 +53,7 @@ dependencies {
     implementation(Deps.Compose.composeMaterial)
 
     implementation(project(Deps.Modules.path to Deps.Modules.database))
+    implementation(project(Deps.Modules.path to Deps.Modules.datastore))
 
     testImplementation(Deps.Tests.jUnit)
 

@@ -31,10 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = ConfigData.jvmTarget
     }
-
 }
 
 dependencies {
+
     implementation(Deps.core)
     implementation(Deps.appCompat)
     testImplementation(Deps.Tests.jUnit)
