@@ -57,6 +57,7 @@ dependencies {
     implementation(project(Deps.Modules.path to Deps.Modules.database))
     implementation(project(Deps.Modules.path to Deps.Modules.datastore))
     implementation(project(Deps.Modules.path to Deps.Modules.network))
+    implementation(project(Deps.Modules.path to Deps.Modules.resources))
 
     testImplementation(Deps.Tests.jUnit)
 

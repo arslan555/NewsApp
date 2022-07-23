@@ -20,6 +20,7 @@ object Deps {
         const val database = ":common:database"
         const val datastore = ":common:datastore"
         const val network = ":common:network"
+        const val resources = ":common:resources"
     }
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }
