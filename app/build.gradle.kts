@@ -51,7 +51,11 @@ dependencies {
     implementation(Deps.Compose.composeUI)
     implementation(Deps.Compose.composeTooling)
     implementation(Deps.Compose.composeMaterial)
+
+    implementation(project(Deps.Modules.path to Deps.Modules.database))
+
     testImplementation(Deps.Tests.jUnit)
+
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)
     androidTestImplementation(Deps.AndroidTest.composeJUnit)

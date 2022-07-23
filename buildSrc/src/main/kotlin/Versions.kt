@@ -5,8 +5,9 @@ object Versions {
     const val lifecycle = "2.3.1"
     const val compose = "1.1.1"
     const val composeActivity = "1.3.1"
-    const val material = "1.1.1"
+    const val composeMaterial = "1.1.1"
     const val jUnit = "4.13.2"
     const val extJUnit = "1.1.3"
     const val espresso = "3.4.0"
+    const val appCompat = "1.4.2"
 }

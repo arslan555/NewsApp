@@ -13,12 +13,17 @@ object Plugins {
 object Deps {
     val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
     val lifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}" }
+    val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
 
+    object Modules{
+        const val path = "path"
+        const val database = ":common:database"
+    }
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }
         val composeUI by lazy { "androidx.compose.ui:ui:${Versions.compose}" }
         val composeTooling by lazy { "androidx.compose.ui:ui-tooling-preview:${Versions.compose}" }
-        val composeMaterial by lazy { "androidx.compose.material:material:${Versions.material}" }
+        val composeMaterial by lazy { "androidx.compose.material:material:${Versions.composeMaterial}" }
     }
 
     object Tests {

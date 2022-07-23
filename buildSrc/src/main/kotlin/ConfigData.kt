@@ -8,5 +8,6 @@ object ConfigData {
     const val testInstrumentRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val defaultProguardFileName = "proguard-android-optimize.txt"
     const val proguardRules = "proguard-rules.pro"
+    const val consumerRules = "consumer-rules.pro"
     const val jvmTarget = "1.8"
 }
