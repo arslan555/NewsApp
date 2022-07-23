@@ -9,6 +9,7 @@ object ConfigData {
     const val datastorePackage = "com.arslan.datastore"
     const val networkPackage = "com.arslan.network"
     const val resourcesPackage = "com.arslan.resources"
+    const val utilsPackage = "com.arslan.utils"
     const val testInstrumentRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val defaultProguardFileName = "proguard-android-optimize.txt"
     const val proguardRules = "proguard-rules.pro"
