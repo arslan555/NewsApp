@@ -5,6 +5,9 @@ object ConfigData {
     const val versionCode = 1
     const val versionName = "1.0.0"
     const val appPackage = "com.arslan.nytimesnewsapp"
+    const val databasePackage = "com.arslan.database"
+    const val datastorePackage = "com.arslan.datastore"
+    const val networkPackage = "com.arslan.network"
     const val testInstrumentRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val defaultProguardFileName = "proguard-android-optimize.txt"
     const val proguardRules = "proguard-rules.pro"

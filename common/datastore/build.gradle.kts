@@ -4,8 +4,8 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.appPackage
-    compileSdk  = ConfigData.compileSdkVersion
+    namespace = ConfigData.datastorePackage
+    compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
         minSdk = ConfigData.minSdkVersion
@@ -18,8 +18,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile (ConfigData.defaultProguardFileName),
-                ConfigData.proguardRules)
+            proguardFiles(
+                getDefaultProguardFile(ConfigData.defaultProguardFileName),
+                ConfigData.proguardRules
+            )
         }
     }
 

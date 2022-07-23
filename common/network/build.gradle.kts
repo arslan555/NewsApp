@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.databasePackage
+    namespace = ConfigData.networkPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -33,10 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = ConfigData.jvmTarget
     }
-
 }
 
 dependencies {
+
     implementation(Deps.core)
     implementation(Deps.appCompat)
     testImplementation(Deps.Tests.jUnit)

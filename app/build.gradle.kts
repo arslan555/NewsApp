@@ -23,12 +23,14 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile (ConfigData.defaultProguardFileName),
-            ConfigData.proguardRules)
+            proguardFiles(
+                getDefaultProguardFile(ConfigData.defaultProguardFileName),
+                ConfigData.proguardRules
+            )
         }
     }
     compileOptions {
-        sourceCompatibility  = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
@@ -54,6 +56,7 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.database))
     implementation(project(Deps.Modules.path to Deps.Modules.datastore))
+    implementation(project(Deps.Modules.path to Deps.Modules.network))
 
     testImplementation(Deps.Tests.jUnit)
 
