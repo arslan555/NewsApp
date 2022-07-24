@@ -1,4 +1,4 @@
-object Versions {
+object Version {
     const val gradlePlugin = "7.4.0-alpha01"
     const val kotlin = "1.6.10"
     const val core = "1.7.0"

@@ -1,6 +1,6 @@
 plugins {
-    id(Plugins.application)
-    id(Plugins.kotlinAndroid)
+    id(Plugin.application)
+    id(Plugin.kotlinAndroid)
 }
 
 android {
@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Version.compose
     }
 
 }

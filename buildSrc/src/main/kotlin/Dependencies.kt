@@ -1,9 +1,9 @@
 object Gradle {
-    val android by lazy { "com.android.tools.build:gradle:${Versions.gradlePlugin}" }
-    val kotlin by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}" }
+    val android by lazy { "com.android.tools.build:gradle:${Version.gradlePlugin}" }
+    val kotlin by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}" }
 }
 
-object Plugins {
+object Plugin {
     val application by lazy { "com.android.application" }
     val library by lazy { "com.android.library" }
     val android by lazy { "android" }
@@ -11,25 +11,25 @@ object Plugins {
 }
 
 object Deps {
-    val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
-    val lifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}" }
-    val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
+    val core by lazy { "androidx.core:core-ktx:${Version.core}" }
+    val lifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}" }
+    val appCompat by lazy { "androidx.appcompat:appcompat:${Version.appCompat}" }
 
     object Compose {
-        val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }
-        val composeUI by lazy { "androidx.compose.ui:ui:${Versions.compose}" }
-        val composeTooling by lazy { "androidx.compose.ui:ui-tooling-preview:${Versions.compose}" }
-        val composeMaterial by lazy { "androidx.compose.material:material:${Versions.composeMaterial}" }
+        val composeActivity by lazy { "androidx.activity:activity-compose:${Version.composeActivity}" }
+        val composeUI by lazy { "androidx.compose.ui:ui:${Version.compose}" }
+        val composeTooling by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.compose}" }
+        val composeMaterial by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
     }
 
     object Tests {
-        val jUnit by lazy { "junit:junit:${Versions.jUnit}" }
+        val jUnit by lazy { "junit:junit:${Version.jUnit}" }
     }
 
     object AndroidTest {
-        val extJUnit by lazy { "androidx.test.ext:junit:${Versions.extJUnit}" }
-        val espresso by lazy { "androidx.test.espresso:espresso-core:${Versions.espresso}" }
-        val composeJUnit by lazy { "androidx.compose.ui:ui-test-junit4:${Versions.compose}" }
+        val extJUnit by lazy { "androidx.test.ext:junit:${Version.extJUnit}" }
+        val espresso by lazy { "androidx.test.espresso:espresso-core:${Version.espresso}" }
+        val composeJUnit by lazy { "androidx.compose.ui:ui-test-junit4:${Version.compose}" }
     }
 
     object Modules {
