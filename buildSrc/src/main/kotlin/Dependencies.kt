@@ -15,14 +15,26 @@ object Deps {
     val lifecycle by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}" }
     val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
 
-    object Modules{
+    object Modules {
         const val path = "path"
-        const val database = ":common:database"
-        const val datastore = ":common:datastore"
-        const val network = ":common:network"
-        const val resources = ":common:resources"
-        const val utils = ":common:utils"
+
+        object Common {
+            private const val common = ":common:"
+            const val database = "${common}database"
+            const val datastore = "${common}datastore"
+            const val network = "${common}network"
+            const val resources = "${common}resources"
+            const val utils = "${common}utils"
+        }
+
+        object Features {
+            private const val features = ":features:"
+            const val news = "${features}news"
+            const val newsDetails = "${features}news_details"
+        }
+
     }
+
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }
         val composeUI by lazy { "androidx.compose.ui:ui:${Versions.compose}" }

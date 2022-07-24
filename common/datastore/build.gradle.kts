@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.datastorePackage
+    namespace = ConfigData.Package.datastorePackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
