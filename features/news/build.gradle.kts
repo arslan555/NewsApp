@@ -1,43 +1,41 @@
 plugins {
-    id(Plugins.library)
-    id(Plugins.kotlinAndroid)
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace = ConfigData.Package.newsPackage
-    compileSdk = ConfigData.compileSdkVersion
+    namespace 'com.arslan.news'
+    compileSdk 32
 
     defaultConfig {
-        minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
+        minSdk 21
+        targetSdk 32
 
-        testInstrumentationRunner = ConfigData.testInstrumentRunner
-        consumerProguardFiles(ConfigData.consumerRules)
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile(ConfigData.defaultProguardFileName),
-                ConfigData.proguardRules
-            )
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = ConfigData.jvmTarget
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
 
-    implementation(Deps.core)
-    implementation(Deps.appCompat)
-    testImplementation(Deps.Tests.jUnit)
-    androidTestImplementation(Deps.AndroidTest.extJUnit)
-    androidTestImplementation(Deps.AndroidTest.espresso)
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

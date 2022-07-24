@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.Package.appPackage
+    namespace = ConfigData.appPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId = ConfigData.Package.appPackage
+        applicationId = ConfigData.appPackage
         minSdk = ConfigData.minSdkVersion
         targetSdk = ConfigData.targetSdkVersion
         versionCode = ConfigData.versionCode
@@ -54,13 +54,11 @@ dependencies {
     implementation(Deps.Compose.composeTooling)
     implementation(Deps.Compose.composeMaterial)
 
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.database))
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.datastore))
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.network))
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
-    implementation(project(Deps.Modules.path to Deps.Modules.Features.news))
-    implementation(project(Deps.Modules.path to Deps.Modules.Features.newsDetails))
+    implementation(project(Deps.Modules.path to Deps.Modules.database))
+    implementation(project(Deps.Modules.path to Deps.Modules.datastore))
+    implementation(project(Deps.Modules.path to Deps.Modules.network))
+    implementation(project(Deps.Modules.path to Deps.Modules.resources))
+    implementation(project(Deps.Modules.path to Deps.Modules.utils))
 
     testImplementation(Deps.Tests.jUnit)
 
