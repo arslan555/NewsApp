@@ -10,6 +10,7 @@ object ConfigData {
     const val networkPackage = "com.arslan.network"
     const val resourcesPackage = "com.arslan.resources"
     const val utilsPackage = "com.arslan.utils"
+    const val navigationPackage = "com.arslan.navigation"
     const val newsPackage = "com.arslan.news"
     const val newsDetailsPackage = "com.arslan.news_details"
     const val testInstrumentRunner = "androidx.test.runner.AndroidJUnitRunner"

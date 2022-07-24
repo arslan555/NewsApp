@@ -22,6 +22,7 @@ object Deps {
         const val network = ":common:network"
         const val resources = ":common:resources"
         const val utils = ":common:utils"
+        const val navigation = ":navigation"
         const val news = ":features:news"
         const val newsDetails = ":features:news_details"
     }
