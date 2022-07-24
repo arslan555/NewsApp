@@ -23,6 +23,7 @@ object Deps {
         const val resources = ":common:resources"
         const val utils = ":common:utils"
         const val news = ":features:news"
+        const val newsDetails = ":features:news_details"
     }
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Versions.composeActivity}" }

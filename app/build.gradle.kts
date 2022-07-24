@@ -60,6 +60,7 @@ dependencies {
     implementation(project(Deps.Modules.path to Deps.Modules.resources))
     implementation(project(Deps.Modules.path to Deps.Modules.utils))
     implementation(project(Deps.Modules.path to Deps.Modules.news))
+    implementation(project(Deps.Modules.path to Deps.Modules.newsDetails))
 
     testImplementation(Deps.Tests.jUnit)
 
