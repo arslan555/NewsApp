@@ -24,19 +24,17 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = ConfigData.jvmTarget
     }
-
 }
 
 dependencies {
+
     implementation(Deps.core)
     implementation(Deps.appCompat)
     testImplementation(Deps.Tests.jUnit)
