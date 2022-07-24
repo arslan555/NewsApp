@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.newsDetailsPackage
+    namespace = ConfigData.Package.newsDetailsPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {

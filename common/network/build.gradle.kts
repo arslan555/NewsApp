@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.networkPackage
+    namespace = ConfigData.Package.networkPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {

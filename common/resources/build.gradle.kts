@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.resourcesPackage
+    namespace = ConfigData.Package.resourcesPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {

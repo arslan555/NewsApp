@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.appPackage
+    namespace = ConfigData.Package.appPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId = ConfigData.appPackage
+        applicationId = ConfigData.Package.appPackage
         minSdk = ConfigData.minSdkVersion
         targetSdk = ConfigData.targetSdkVersion
         versionCode = ConfigData.versionCode
@@ -54,14 +54,16 @@ dependencies {
     implementation(Deps.Compose.composeTooling)
     implementation(Deps.Compose.composeMaterial)
 
-    implementation(project(Deps.Modules.path to Deps.Modules.database))
-    implementation(project(Deps.Modules.path to Deps.Modules.datastore))
-    implementation(project(Deps.Modules.path to Deps.Modules.network))
-    implementation(project(Deps.Modules.path to Deps.Modules.resources))
-    implementation(project(Deps.Modules.path to Deps.Modules.utils))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.database))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.datastore))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.network))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
+
+    implementation(project(Deps.Modules.path to Deps.Modules.Feature.news))
+    implementation(project(Deps.Modules.path to Deps.Modules.Feature.newsDetails))
+    
     implementation(project(Deps.Modules.path to Deps.Modules.navigation))
-    implementation(project(Deps.Modules.path to Deps.Modules.news))
-    implementation(project(Deps.Modules.path to Deps.Modules.newsDetails))
 
     testImplementation(Deps.Tests.jUnit)
 
