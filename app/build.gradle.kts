@@ -1,6 +1,8 @@
 plugins {
     id(Plugin.application)
     id(Plugin.kotlinAndroid)
+    id(Plugin.daggerHilt)
+    kotlin(Plugin.kapt)
 }
 
 android {
@@ -53,6 +55,8 @@ dependencies {
     implementation(Deps.Compose.composeUI)
     implementation(Deps.Compose.composeTooling)
     implementation(Deps.Compose.composeMaterial)
+    implementation(Deps.DaggerHilt.daggerDep)
+    kapt(Deps.DaggerHilt.daggerCompilerDep)
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.database))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.datastore))

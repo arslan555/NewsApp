@@ -1,6 +1,5 @@
 object Gradle {
-    val android by lazy { "com.android.tools.build:gradle:${Version.gradlePlugin}" }
-    val kotlin by lazy { "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}" }
+    val daggerHilt by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Version.daggerHilt}" }
 }
 
 object Plugin {
@@ -8,6 +7,8 @@ object Plugin {
     val library by lazy { "com.android.library" }
     val android by lazy { "android" }
     val kotlinAndroid by lazy { "org.jetbrains.kotlin.android" }
+    val daggerHilt by lazy { "dagger.hilt.android.plugin" }
+    val kapt by lazy { "kapt" }
 }
 
 object Deps {
@@ -20,6 +21,11 @@ object Deps {
         val composeUI by lazy { "androidx.compose.ui:ui:${Version.compose}" }
         val composeTooling by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.compose}" }
         val composeMaterial by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
+    }
+
+    object DaggerHilt {
+        val daggerDep by lazy { "com.google.dagger:hilt-android:${Version.daggerHilt}" }
+        val daggerCompilerDep by lazy { "com.google.dagger:hilt-android-compiler:${Version.daggerHilt}" }
     }
 
     object Tests {
