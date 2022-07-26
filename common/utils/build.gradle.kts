@@ -1,6 +1,8 @@
 plugins {
     id(Plugin.library)
     id(Plugin.kotlinAndroid)
+    id(Plugin.daggerHilt)
+    kotlin(Plugin.kapt)
 }
 
 android {
@@ -37,6 +39,8 @@ dependencies {
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
+    implementation(Deps.DaggerHilt.daggerDep)
+    kapt(Deps.DaggerHilt.daggerCompilerDep)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)
