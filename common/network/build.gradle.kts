@@ -41,8 +41,9 @@ dependencies {
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
-    implementation(Deps.DaggerHilt.daggerDep)
-    kapt(Deps.DaggerHilt.daggerCompilerDep)
+    implementation(Deps.DaggerHilt.core)
+    kapt(Deps.DaggerHilt.compiler)
+    implementation(Deps.Retrofit.core)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)

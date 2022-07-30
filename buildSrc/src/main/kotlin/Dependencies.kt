@@ -24,8 +24,12 @@ object Deps {
     }
 
     object DaggerHilt {
-        val daggerDep by lazy { "com.google.dagger:hilt-android:${Version.daggerHilt}" }
-        val daggerCompilerDep by lazy { "com.google.dagger:hilt-android-compiler:${Version.daggerHilt}" }
+        val core by lazy { "com.google.dagger:hilt-android:${Version.daggerHilt}" }
+        val compiler by lazy { "com.google.dagger:hilt-android-compiler:${Version.daggerHilt}" }
+    }
+
+    object Retrofit {
+        val core by lazy { "com.squareup.retrofit2:retrofit:${Version.retrofit}" }
     }
 
     object Tests {
