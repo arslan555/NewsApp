@@ -21,4 +21,11 @@ object ConfigData {
         const val newsPackage = "com.arslan.news"
         const val newsDetailsPackage = "com.arslan.news_details"
     }
+
+    object ConfigField {
+        val baseUrl = Pair("BASE_URL","\"https://newsapi.org/v2/\"")
+        val apiKey = Pair("apiKey", "\"add your api key here\"")
+
+    }
+
 }

@@ -15,6 +15,9 @@ android {
 
         testInstrumentationRunner = ConfigData.testInstrumentRunner
         consumerProguardFiles(ConfigData.consumerRules)
+
+        buildConfigField("String",ConfigData.ConfigField.baseUrl.first,ConfigData.ConfigField.baseUrl.second)
+        buildConfigField("String",ConfigData.ConfigField.apiKey.first,ConfigData.ConfigField.apiKey.second)
     }
 
     buildTypes {
