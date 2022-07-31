@@ -1,6 +1,7 @@
 package com.arslan.network.di
 
 import com.arslan.network.BuildConfig
+import com.arslan.network.Constants
 import com.arslan.network.retrofit.ApiInterface
 import dagger.Module
 import dagger.Provides
@@ -30,7 +31,7 @@ object NetworkModule {
         return Interceptor {
             val newRequest = it.request()
                 .newBuilder()
-                .url(it.request().url().newBuilder().addQueryParameter("api_key", "API_KEY").build()).build()
+                .url(it.request().url().newBuilder().addQueryParameter(Constants.QueryParams.API_KEY, BuildConfig.apiKey).build()).build()
             it.proceed(newRequest)
         }
     }
@@ -40,7 +41,7 @@ object NetworkModule {
     fun providesRetrofitClient(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(BuildConfig.baseUrl)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
@@ -49,4 +50,6 @@ object NetworkModule {
     fun  providesApi(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
     }
+
+
 }

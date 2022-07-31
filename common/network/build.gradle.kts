@@ -16,8 +16,8 @@ android {
         testInstrumentationRunner = ConfigData.testInstrumentRunner
         consumerProguardFiles(ConfigData.consumerRules)
 
-        buildConfigField("String",ConfigData.ConfigField.baseUrl.first,ConfigData.ConfigField.baseUrl.second)
-        buildConfigField("String",ConfigData.ConfigField.apiKey.first,ConfigData.ConfigField.apiKey.second)
+        buildConfigField("String", ConfigData.ConfigField.baseUrl, getBaseUrl())
+        buildConfigField("String", ConfigData.ConfigField.apiKey, getApiKey())
     }
 
     buildTypes {
@@ -52,4 +52,19 @@ dependencies {
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)
+}
+
+fun getBaseUrl(): String = readProperties()[ConfigData.ConfigField.baseUrl] ?: ""
+
+fun getApiKey(): String = readProperties()[ConfigData.ConfigField.apiKey] ?: ""
+
+fun readProperties(fileName: String = "keys.properties"): HashMap<String, String> {
+    val items by lazy { HashMap<String, String>() }
+    val fl = rootProject.file(fileName)
+    (fl.exists()).let {
+        fl.forEachLine {
+            items[it.split("=")[0]] = it.split("=")[1]
+        }
+    }
+    return items
 }

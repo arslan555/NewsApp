@@ -23,9 +23,8 @@ object ConfigData {
     }
 
     object ConfigField {
-        val baseUrl = Pair("BASE_URL","\"https://newsapi.org/v2/\"")
-        val apiKey = Pair("apiKey", "\"add your api key here\"")
-
+        const val baseUrl = "baseUrl"
+        const val apiKey = "apiKey"
     }
 
 }
