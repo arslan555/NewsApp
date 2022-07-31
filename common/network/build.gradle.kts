@@ -44,6 +44,8 @@ dependencies {
     implementation(Deps.DaggerHilt.core)
     kapt(Deps.DaggerHilt.compiler)
     implementation(Deps.Retrofit.core)
+    implementation(Deps.Retrofit.gsonConverter)
+    implementation(Deps.OkHttp.logging)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)

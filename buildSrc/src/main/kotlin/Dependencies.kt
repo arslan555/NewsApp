@@ -30,8 +30,12 @@ object Deps {
 
     object Retrofit {
         val core by lazy { "com.squareup.retrofit2:retrofit:${Version.retrofit}" }
+        val gsonConverter by lazy {"com.squareup.retrofit2:converter-gson:${Version.retrofit}"}
     }
 
+    object OkHttp {
+        val logging by lazy {"com.squareup.okhttp3:logging-interceptor:${Version.okHttp}"}
+    }
     object Tests {
         val jUnit by lazy { "junit:junit:${Version.jUnit}" }
     }
