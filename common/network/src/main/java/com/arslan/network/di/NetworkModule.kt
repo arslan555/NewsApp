@@ -2,7 +2,9 @@ package com.arslan.network.di
 
 import com.arslan.network.BuildConfig
 import com.arslan.network.Constants
+import com.arslan.network.RequestExecutor
 import com.arslan.network.retrofit.ApiInterface
+import com.arslan.network.retrofit.RetrofitRequestExecutor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -54,6 +56,12 @@ object NetworkModule {
     @Singleton
     fun  providesApi(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNetworkExecutor(requestExecutor: RetrofitRequestExecutor): RequestExecutor {
+        return requestExecutor
     }
 
 
