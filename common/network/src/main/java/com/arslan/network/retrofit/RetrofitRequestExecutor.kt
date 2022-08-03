@@ -13,14 +13,14 @@ import timber.log.Timber
 import java.net.SocketTimeoutException
 import javax.inject.Inject
 
-class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiInterface) :
-    RequestExecutor {
+class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiInterface) : RequestExecutor {
 
     override suspend fun execute(request: BaseRequest, networkResponse: (NetworkResponse) -> Unit) {
         Timber.d("Endpoint ${request.endPoint()}")
         Timber.d("Headers ${request.requestHeaders}")
         Timber.d("Body ${request.postBody()}")
         Timber.d("QueryParam ${request.queryParams}")
+        networkResponse.invoke(NetworkResponse.Loading)
         try {
             val response = getApiResponse(request, apiInterface)
             if (response.isSuccessful) {
@@ -75,7 +75,7 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
         var data = ServerResponseModel()
         try {
             data = Gson().fromJson(response, ServerResponseModel::class.java)
-            if (data.model!!.isJsonNull) {
+            if (null == data.model) {
                 val element = Gson().fromJson(response, JsonElement::class.java)
                 if (element != null) {
                     data.model = element
