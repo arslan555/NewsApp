@@ -12,8 +12,8 @@ interface ApiInterface {
     @GET(END_POINT)
     suspend fun sendGetRequest(
         @Path(value = END_POINT, encoded = true) endPoint: String?,
-        @HeaderMap headerMap: MutableMap<String, String>?,
-        @QueryMap queryMap: MutableMap<String, String>?
+        @HeaderMap headerMap: MutableMap<String, String?>?,
+        @QueryMap queryMap: MutableMap<String, String?>?
     ): Response<String>
 
 }

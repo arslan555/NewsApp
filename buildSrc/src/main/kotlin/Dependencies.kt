@@ -36,6 +36,10 @@ object Deps {
     object OkHttp {
         val logging by lazy {"com.squareup.okhttp3:logging-interceptor:${Version.okHttp}"}
     }
+
+    object Timber  {
+        val log by lazy {  "com.jakewharton.timber:timber:${Version.timber}" }
+    }
     object Tests {
         val jUnit by lazy { "junit:junit:${Version.jUnit}" }
     }

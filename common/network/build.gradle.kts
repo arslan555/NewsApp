@@ -49,6 +49,8 @@ dependencies {
     implementation(Deps.Retrofit.core)
     implementation(Deps.Retrofit.gsonConverter)
     implementation(Deps.OkHttp.logging)
+    implementation(Deps.Timber.log)
+
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)

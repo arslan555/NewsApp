@@ -8,7 +8,7 @@ abstract class BaseRequest {
     abstract fun postBody(): String
     abstract val responseType: Type
 
-    open val queryParams: MutableMap<String, String?> by lazy { mutableMapOf() }
+    open val queryParams: MutableMap<String, String?>? by lazy { mutableMapOf() }
     open val fieldMaps: MutableMap<String, String?>? by lazy { mutableMapOf() }
-    open val requestHeaders: MutableMap<String,String?> by lazy { mutableMapOf() }
+    open val requestHeaders: MutableMap<String,String?>? by lazy { mutableMapOf() }
 }

@@ -10,6 +10,7 @@ object Version {
     const val daggerHilt = "2.38.1"
     const val retrofit = "2.9.0"
     const val okHttp = "3.13.1"
+    const val timber = "5.0.1"
 
     const val jUnit = "4.13.2"
     const val extJUnit = "1.1.3"
