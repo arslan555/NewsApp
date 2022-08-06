@@ -48,6 +48,7 @@ dependencies {
     kapt(Deps.DaggerHilt.compiler)
     implementation(Deps.Retrofit.core)
     implementation(Deps.Retrofit.gsonConverter)
+    implementation(Deps.Retrofit.scalarConverter)
     implementation(Deps.OkHttp.logging)
     implementation(Deps.Timber.log)
 

@@ -1,4 +1,4 @@
-package com.arslan.network
+package com.arslan.network.model
 
 import com.google.gson.JsonElement
 
