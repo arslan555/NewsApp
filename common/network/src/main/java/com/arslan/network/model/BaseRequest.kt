@@ -1,4 +1,4 @@
-package com.arslan.network
+package com.arslan.network.model
 
 import java.lang.reflect.Type
 

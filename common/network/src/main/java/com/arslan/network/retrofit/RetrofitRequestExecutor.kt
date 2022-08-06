@@ -1,7 +1,7 @@
 package com.arslan.network.retrofit
 
 import com.arslan.network.NetworkResponse
-import com.arslan.network.BaseRequest
+import com.arslan.network.model.BaseRequest
 import com.arslan.network.Constants
 import com.arslan.network.RequestExecutor
 import com.arslan.network.model.ServerResponseModel
