@@ -55,6 +55,8 @@ dependencies {
     implementation(Deps.Compose.composeUI)
     implementation(Deps.Compose.composeTooling)
     implementation(Deps.Compose.composeMaterial)
+    implementation(Deps.Retrofit.gsonConverter)
+    implementation(Deps.Timber.log)
     implementation(Deps.DaggerHilt.core)
     kapt(Deps.DaggerHilt.compiler)
 

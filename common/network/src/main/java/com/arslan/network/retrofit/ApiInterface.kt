@@ -9,7 +9,7 @@ import retrofit2.http.QueryMap
 
 interface ApiInterface {
 
-    @GET(END_POINT)
+    @GET("{$END_POINT}")
     suspend fun sendGetRequest(
         @Path(value = END_POINT, encoded = true) endPoint: String?,
         @HeaderMap headerMap: MutableMap<String, String?>?,

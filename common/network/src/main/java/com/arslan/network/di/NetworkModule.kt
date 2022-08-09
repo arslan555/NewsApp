@@ -63,8 +63,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNetworkExecutor(requestExecutor: RetrofitRequestExecutor): RequestExecutor {
-        return requestExecutor
+    fun provideNetworkExecutor(apiInterface: ApiInterface): RequestExecutor {
+        return RetrofitRequestExecutor(apiInterface)
     }
 
 

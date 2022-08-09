@@ -1,6 +1,6 @@
 package com.arslan.nytimesnewsapp
 
-class UserResponse : ArrayList<UserResponseItem>(){
+class UserResponse : ArrayList<UserResponse.UserResponseItem>(){
     data class UserResponseItem(
         val id: Int?,
         val name: String?,

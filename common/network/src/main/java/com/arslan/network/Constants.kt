@@ -1,7 +1,7 @@
 package com.arslan.network
 
 internal object Constants {
-    internal const val END_POINT = "{end_point}"
+    internal const val END_POINT = "end_point"
 
     internal object QueryParams {
         internal const val API_KEY = "apiKey"
