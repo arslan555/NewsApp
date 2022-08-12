@@ -39,11 +39,7 @@ class MainActivity : ComponentActivity() {
             }
         }
         GlobalScope.launch {
-            when(val  response = newsRepo.invoke()) {
-                is ApiSuccess -> Timber.d("${response.data}")
-                is ApiError -> Timber.d("${response.message}")
-                is ApiException -> Timber.d("${response.e.message}")
-            }
+            newsRepo.invoke()
         }
 
     }
