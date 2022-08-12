@@ -10,8 +10,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.arslan.network.model.ApiError
+import com.arslan.network.model.ApiException
+import com.arslan.network.model.ApiSuccess
 import com.arslan.nytimesnewsapp.ui.theme.NYTimesNewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -32,7 +38,14 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        newsRepo.getResponse()
+        GlobalScope.launch {
+            when(val  response = newsRepo.invoke()) {
+                is ApiSuccess -> Timber.d("${response.data}")
+                is ApiError -> Timber.d("${response.message}")
+                is ApiException -> Timber.d("${response.e.message}")
+            }
+        }
+
     }
 }
 
