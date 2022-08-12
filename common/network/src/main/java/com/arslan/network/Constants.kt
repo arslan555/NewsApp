@@ -12,7 +12,8 @@ internal object Constants {
     }
 
     /*
-    * Common network codes for Su
+    * Common network codes for Success  & Error responses
+    *
     * */
     internal object NetworkCode {
 

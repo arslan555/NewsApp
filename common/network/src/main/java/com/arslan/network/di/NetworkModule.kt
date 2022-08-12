@@ -30,7 +30,7 @@ object NetworkModule {
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .addInterceptor(authInterceptor)
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)).build()
+            .build()
     }
 
     @Provides
