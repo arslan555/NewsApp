@@ -19,6 +19,14 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
 
     override suspend fun <T : Any> execute(request: BaseRequest): NetworkResult<T> {
         return try {
+            Timber.d(
+                "Request:: " +
+                         "Method: ${request.requestMethod()} " +
+                         "EndPoint: ${request.endPoint()} " +
+                         "QueryParam: ${request.queryParams} " +
+                         "Headers: ${request.requestHeaders} " +
+                        "Response Type: ${request.responseType}"
+            )
             val response = getApiResponse(request, apiInterface)
             if (response.isSuccessful) {
                 val data = Gson().fromJson<T>(response.body(), request.responseType)
@@ -27,15 +35,18 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
                 ApiError(response.code(), response.errorBody().toString())
             }
         } catch (e: JsonSyntaxException) {
-            ApiError(10002, e.message)
+            Timber.e("JsonSyntaxException ${e.message} for request ${request.endPoint()}")
+            ApiException(e)
         } catch (e: JsonParseException) {
-            ApiError(10003, e.message)
+            Timber.e("JsonParseException ${e.message} for request ${request.endPoint()}")
+            ApiException(e)
         } catch (e: HttpException) {
             ApiError(e.code(), e.message)
         } catch (e: SocketTimeoutException) {
-            Timber.e("SocketTimeOut Exception ${e.message} for request ${request.endPoint()}")
-            ApiError(10001, e.message)
+            Timber.e("SocketTimeOutException ${e.message} for request ${request.endPoint()}")
+            ApiException(e)
         } catch (e: Throwable) {
+            Timber.e("General Exception ${e.message} for request ${request.endPoint()}")
             ApiException(e)
         }
     }
