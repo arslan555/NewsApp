@@ -44,6 +44,7 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
             Timber.e("JsonParseException ${e.message} for request ${request.endPoint()}")
             ApiException(e)
         } catch (e: HttpException) {
+            Timber.e("API Exception ${e.message} for request ${request.endPoint()}")
             ApiException(e)
         } catch (e: SocketTimeoutException) {
             Timber.e("SocketTimeOutException ${e.message} for request ${request.endPoint()}")
