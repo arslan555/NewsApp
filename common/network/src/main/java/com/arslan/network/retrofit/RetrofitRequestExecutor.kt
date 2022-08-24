@@ -7,6 +7,7 @@ import com.arslan.network.model.*
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.google.gson.JsonSyntaxException
+import com.google.gson.reflect.TypeToken
 import retrofit2.HttpException
 
 import retrofit2.Response
@@ -32,7 +33,9 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
                 val data = Gson().fromJson<T>(response.body(), request.responseType)
                 ApiSuccess(data)
             } else {
-                ApiError(response.code(), response.errorBody().toString())
+                val type = object : TypeToken<ErrorResponse>() {}.type
+                val errorResponse = Gson().fromJson<T>(response.errorBody()!!.charStream(), type)
+                ApiError(response.code(), errorResponse)
             }
         } catch (e: JsonSyntaxException) {
             Timber.e("JsonSyntaxException ${e.message} for request ${request.endPoint()}")
@@ -41,7 +44,7 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
             Timber.e("JsonParseException ${e.message} for request ${request.endPoint()}")
             ApiException(e)
         } catch (e: HttpException) {
-            ApiError(e.code(), e.message)
+            ApiException(e)
         } catch (e: SocketTimeoutException) {
             Timber.e("SocketTimeOutException ${e.message} for request ${request.endPoint()}")
             ApiException(e)
