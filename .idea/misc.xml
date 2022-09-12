@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/java/com/arslan/nytimesnewsapp/MainActivity.kt" value="0.35501355013550134" />
+        <entry key="features/onboarding/src/main/res/layout/activity_splash.xml" value="0.1" />
       </map>
     </option>
   </component>

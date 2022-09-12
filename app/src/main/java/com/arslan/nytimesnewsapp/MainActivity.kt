@@ -1,23 +1,13 @@
 package com.arslan.nytimesnewsapp
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.arslan.network.model.ApiError
-import com.arslan.network.model.ApiException
-import com.arslan.network.model.ApiSuccess
-import com.arslan.nytimesnewsapp.ui.theme.NYTimesNewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -28,15 +18,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NYTimesNewsAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            val intent = Intent(Intent.ACTION_MAIN);
+            intent.setClassName(this.packageName, "com.arslan.onboarding.splash.presentation.SplashActivity");
+            startActivity(intent)
+            finish()
         }
         GlobalScope.launch {
             newsRepo.invoke()
@@ -45,15 +30,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    NYTimesNewsAppTheme {
-        Greeting("Android")
-    }
-}

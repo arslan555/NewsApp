@@ -68,7 +68,8 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.news))
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.newsDetails))
-    
+    implementation(project(Deps.Modules.path to Deps.Modules.Feature.onboarding))
+
     implementation(project(Deps.Modules.path to Deps.Modules.navigation))
 
     testImplementation(Deps.Tests.jUnit)

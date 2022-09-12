@@ -1,4 +1,4 @@
-package com.arslan.nytimesnewsapp.ui.theme
+package com.arslan.resources.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

@@ -67,6 +67,7 @@ object Deps {
             private const val features = ":features:"
             const val news = "${features}news"
             const val newsDetails = "${features}news_details"
+            const val onboarding = "${features}onboarding"
         }
 
         const val navigation = ":navigation"

@@ -26,6 +26,12 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Version.compose
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,6 +46,11 @@ dependencies {
     implementation(Deps.core)
     implementation(Deps.appCompat)
     implementation(Deps.DaggerHilt.core)
+    api(Deps.Compose.composeActivity)
+    api(Deps.Compose.composeUI)
+    api(Deps.Compose.composeTooling)
+    api(Deps.Compose.composeMaterial)
+
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
