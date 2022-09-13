@@ -1,6 +1,5 @@
 package com.arslan.nytimesnewsapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,8 +17,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val intent = Intent(Intent.ACTION_MAIN);
-            intent.setClassName(this.packageName, "com.arslan.onboarding.splash.presentation.SplashActivity");
+            val intent = Intent(Intent.ACTION_MAIN)
+            intent.setClassName(this.packageName, "com.arslan.onboarding.splash.presentation.SplashActivity")
             startActivity(intent)
             finish()
         }

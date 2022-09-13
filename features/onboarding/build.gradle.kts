@@ -49,7 +49,10 @@ dependencies {
     implementation(Deps.Timber.log)
     implementation(Deps.DaggerHilt.core)
     kapt(Deps.DaggerHilt.compiler)
+
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
+   
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)
