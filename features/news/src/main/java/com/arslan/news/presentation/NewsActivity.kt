@@ -26,6 +26,7 @@ class NewsActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     HomeScreen()
+
                 }
             }
         }

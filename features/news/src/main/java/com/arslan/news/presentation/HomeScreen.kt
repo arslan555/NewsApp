@@ -5,21 +5,24 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import com.arslan.resources.R
 import com.arslan.resources.theme.Shapes
+import com.arslan.resources.theme.purple
+import com.arslan.resources.theme.purpleLight
 
 
 @Composable
@@ -51,9 +54,11 @@ fun NewsTopBar() {
                 .width(100.dp)
 
         )
-        Image(
-            painter = painterResource(id = R.drawable.ic_notification), contentDescription = null
-        )
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_notification),
+                contentDescription = null,
+            )
 
     }
 }
@@ -65,9 +70,39 @@ fun SearchBar() {
             .fillMaxWidth()
             .height(48.dp)
             .background(MaterialTheme.colors.background)
-            .border(BorderStroke(3.dp, MaterialTheme.colors.onBackground), Shapes.small)
+            .border(BorderStroke(3.dp, purple), RoundedCornerShape(15.dp))
     ) {
+        val (searchIcon, inputText, filterIcon) = createRefs()
+        Image(
+            painter = painterResource(id = R.drawable.ic_search),
+            contentDescription = null,
+            modifier = Modifier.constrainAs(searchIcon) {
+                start.linkTo(parent.start, margin = 10.dp)
+                top.linkTo(parent.top, margin = 10.dp)
+                bottom.linkTo(parent.bottom, margin = 10.dp)
+            }
+        )
 
+        Text(text = "Search",
+            style = MaterialTheme.typography.body1.copy(color = purpleLight),
+            modifier = Modifier
+                .background(MaterialTheme.colors.background)
+                .constrainAs(inputText) {
+                    start.linkTo(searchIcon.end, margin = 12.dp)
+                    end.linkTo(filterIcon.start, margin = 12.dp)
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                    width = Dimension.fillToConstraints
+                })
+        Image(
+            painter = painterResource(id = R.drawable.ic_filter),
+            contentDescription = null,
+            modifier = Modifier.constrainAs(filterIcon) {
+                end.linkTo(parent.end, margin = 10.dp)
+                top.linkTo(parent.top, margin = 10.dp)
+                bottom.linkTo(parent.bottom, margin = 10.dp)
+            }
+        )
     }
 }
 
@@ -89,7 +124,14 @@ fun previewToolbar() {
 
 @Preview
 @Composable
+fun previewSearchBar() {
+    SearchBar()
+}
+
+@Preview
+@Composable
 fun previewHomeScreen() {
     HomeScreen()
 }
+
 

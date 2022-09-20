@@ -15,7 +15,8 @@ private val DarkColorPalette = darkColors(
     secondary = Teal200,
     background = black,
     surface = black,
-    onBackground = black
+    onBackground = black,
+    onSurface = purple
 )
 
 @SuppressLint("ConflictingOnColor")
@@ -25,7 +26,8 @@ private val LightColorPalette = lightColors(
     secondary = Teal200,
     background = white,
     surface = white,
-    onBackground = black
+    onBackground = black,
+    onSurface = purple
 )
 
 @Composable
