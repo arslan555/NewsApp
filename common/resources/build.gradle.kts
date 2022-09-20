@@ -48,9 +48,8 @@ dependencies {
     implementation(Deps.DaggerHilt.core)
     api(Deps.Compose.composeActivity)
     api(Deps.Compose.composeUI)
-    api(Deps.Compose.composeTooling)
     api(Deps.Compose.composeMaterial)
-
+    api(Deps.Compose.composeConstraintLayout)
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)

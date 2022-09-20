@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/java/com/arslan/nytimesnewsapp/MainActivity.kt" value="0.35501355013550134" />
+        <entry key="common/resources/src/main/res/drawable/ic_logo.xml" value="0.1" />
+        <entry key="common/resources/src/main/res/drawable/ic_notification.xml" value="0.2315" />
+        <entry key="features/news/src/main/java/com/arslan/news/presentation/HomeScreen.kt" value="0.75" />
         <entry key="features/onboarding/src/main/res/layout/activity_splash.xml" value="0.1" />
       </map>
     </option>

@@ -53,7 +53,7 @@ dependencies {
     implementation(Deps.lifecycle)
     implementation(Deps.Compose.composeActivity)
     implementation(Deps.Compose.composeUI)
-    implementation(Deps.Compose.composeTooling)
+    implementation(Deps.Compose.composeToolingPreview)
     implementation(Deps.Compose.composeMaterial)
     implementation(Deps.Retrofit.gsonConverter)
     implementation(Deps.Timber.log)

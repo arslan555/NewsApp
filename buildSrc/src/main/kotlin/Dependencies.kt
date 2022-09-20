@@ -19,8 +19,10 @@ object Deps {
     object Compose {
         val composeActivity by lazy { "androidx.activity:activity-compose:${Version.composeActivity}" }
         val composeUI by lazy { "androidx.compose.ui:ui:${Version.compose}" }
-        val composeTooling by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.compose}" }
+        val composeToolingPreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.compose}" }
+        val composeTooling by lazy { "androidx.compose.ui:ui-tooling" }
         val composeMaterial by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
+        val composeConstraintLayout by lazy { "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraintLayout}" }
     }
 
     object DaggerHilt {
