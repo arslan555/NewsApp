@@ -1,12 +1,12 @@
 package com.arslan.news.presentation
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -20,11 +20,11 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.arslan.resources.R
-import com.arslan.resources.theme.Shapes
 import com.arslan.resources.theme.purple
 import com.arslan.resources.theme.purpleLight
 
 
+@SuppressLint("ComposableNaming")
 @Composable
 fun HomeScreen() {
     Scaffold(modifier = Modifier.padding(top = 24.dp, start = 24.dp, end = 24.dp),
@@ -36,6 +36,7 @@ fun HomeScreen() {
         })
 }
 
+@SuppressLint("ComposableNaming")
 @Composable
 fun NewsTopBar() {
     Row(
@@ -63,6 +64,7 @@ fun NewsTopBar() {
     }
 }
 
+@SuppressLint("ComposableNaming")
 @Composable
 fun SearchBar() {
     ConstraintLayout(
@@ -106,28 +108,33 @@ fun SearchBar() {
     }
 }
 
+@SuppressLint("ComposableNaming")
 @Composable
 fun TrendingNews() {
 
 }
 
+@SuppressLint("ComposableNaming")
 @Composable
 fun LatestNews() {
 
 }
 
+@SuppressLint("ComposableNaming")
 @Preview
 @Composable
 fun previewToolbar() {
     NewsTopBar()
 }
 
+@SuppressLint("ComposableNaming")
 @Preview
 @Composable
 fun previewSearchBar() {
     SearchBar()
 }
 
+@SuppressLint("ComposableNaming")
 @Preview
 @Composable
 fun previewHomeScreen() {
