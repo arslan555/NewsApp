@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -129,7 +130,7 @@ fun TrendingNews() {
             style = MaterialTheme.typography.h6.copy(color = black),
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(bottom = 16.dp)
+                .padding(bottom = 8.dp)
                 .constrainAs(trendingText) {
                     start.linkTo(parent.start)
                     top.linkTo(parent.top)
@@ -140,7 +141,7 @@ fun TrendingNews() {
             style = MaterialTheme.typography.caption.copy(color = purple),
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(bottom = 16.dp)
+                .padding(bottom = 8.dp)
                 .constrainAs(seeAllText) {
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
@@ -177,7 +178,7 @@ fun TrendingNews() {
             maxLines = 1,
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(top = 8.dp)
+                .padding(top = 4.dp)
                 .constrainAs(titleText) {
                     start.linkTo(parent.start)
                     top.linkTo(regionText.bottom)
@@ -187,7 +188,7 @@ fun TrendingNews() {
             style = MaterialTheme.typography.h6.copy(color = purple, fontSize = 13.sp),
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(top = 8.dp)
+                .padding(top = 4.dp)
                 .constrainAs(channelText) {
                     start.linkTo(parent.start)
                     top.linkTo(titleText.bottom)
@@ -200,7 +201,7 @@ fun TrendingNews() {
                     start.linkTo(channelText.end)
                     top.linkTo(titleText.bottom)
                 }
-                .padding(top = 8.dp, start = 12.dp),
+                .padding(top = 4.dp, start = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
