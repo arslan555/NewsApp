@@ -50,6 +50,8 @@ dependencies {
     api(Deps.Compose.composeUI)
     api(Deps.Compose.composeMaterial)
     api(Deps.Compose.composeConstraintLayout)
+    debugApi(Deps.Compose.composeTooling)
+    api(Deps.Compose.composeToolingPreview)
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)

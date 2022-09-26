@@ -5,6 +5,7 @@ object Version {
     const val core = "1.7.0"
     const val lifecycle = "2.3.1"
     const val compose = "1.1.1"
+    const val composeTooling = "1.0.0-rc01"
     const val composeConstraintLayout = "1.0.1"
     const val composeActivity = "1.3.1"
     const val composeMaterial = "1.1.1"

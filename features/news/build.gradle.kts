@@ -49,8 +49,6 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
-    debugImplementation("androidx.compose.ui:ui-tooling:1.0.0-rc01")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.0.0-rc01")
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
