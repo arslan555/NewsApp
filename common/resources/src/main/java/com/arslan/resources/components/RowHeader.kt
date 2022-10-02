@@ -18,7 +18,7 @@ import com.arslan.resources.theme.purple
 fun RowHeader(title: String) {
     Row(
         modifier = Modifier
-            .padding(bottom = 8.dp, top = 8.dp),
+            .padding(bottom = 2.dp, top = 2.dp),
         horizontalArrangement = Arrangement.SpaceBetween
 
     ) {

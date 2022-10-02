@@ -27,7 +27,7 @@ fun TrendingNews() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(220.dp)
+            .heightIn(200.dp)
             .background(MaterialTheme.colors.background)
             .padding(top = 16.dp, bottom = 8.dp)
     ) {
@@ -38,7 +38,7 @@ fun TrendingNews() {
             contentScale = ContentScale.FillBounds,
 
             modifier = Modifier
-                .height(180.dp)
+                .height(140.dp)
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(4.dp))
         )
@@ -47,7 +47,7 @@ fun TrendingNews() {
             text = "Europe",
             style = MaterialTheme.typography.caption.copy(color = purple),
             modifier = Modifier
-                .padding(top = 8.dp)
+                .padding(top = 4.dp)
         )
 
         Text(
@@ -56,12 +56,10 @@ fun TrendingNews() {
             maxLines = 1,
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(top = 4.dp)
         )
         Row(
             modifier = Modifier
                 .background(MaterialTheme.colors.background)
-                .padding(top = 4.dp)
         ) {
             Text(
                 text = "BBC News",
