@@ -10,9 +10,9 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @SuppressLint("ComposableNaming")
 @Composable
-fun LatestNews() {
+fun LatestNews(seeAll: ()-> Unit) {
     Column {
-        RowHeader(title = "Latest")
+        RowHeader(title = "Latest", seeAll)
         Box {
             TabLayout(
                 listOf("All", "Sports", "Politics", "Business", "Health", "Travel")
@@ -37,5 +37,5 @@ fun LatestNews() {
 @Preview
 @Composable
 fun previewLatestNews() {
-    LatestNews()
+    LatestNews(){}
 }

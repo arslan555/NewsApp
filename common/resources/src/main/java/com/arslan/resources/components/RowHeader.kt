@@ -1,5 +1,6 @@
 package com.arslan.resources.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +16,7 @@ import com.arslan.resources.theme.black
 import com.arslan.resources.theme.purple
 
 @Composable
-fun RowHeader(title: String) {
+fun RowHeader(title: String, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .padding(bottom = 2.dp, top = 2.dp),
@@ -30,7 +31,9 @@ fun RowHeader(title: String) {
         Text(
             text = "See all",
             style = MaterialTheme.typography.caption.copy(color = purple),
-            modifier = Modifier.align(Alignment.CenterVertically)
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
+                .clickable { onClick.invoke() }
         )
     }
 }
@@ -38,5 +41,5 @@ fun RowHeader(title: String) {
 @Preview
 @Composable
 fun PreviewRowHeader() {
-    RowHeader(title = "Trending")
+    RowHeader(title = "Trending"){}
 }
