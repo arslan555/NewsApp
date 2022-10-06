@@ -59,7 +59,6 @@ dependencies {
     implementation(Deps.DaggerHilt.core)
     kapt(Deps.DaggerHilt.compiler)
 
-    implementation(project(Deps.Modules.path to Deps.Modules.Common.database))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.datastore))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.network))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
