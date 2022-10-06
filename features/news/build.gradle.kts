@@ -49,6 +49,9 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
+
+    implementation(project(Deps.Modules.path to Deps.Modules.Feature.home))
+
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
