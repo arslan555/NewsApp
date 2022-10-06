@@ -24,8 +24,7 @@ class NewsActivity : ComponentActivity() {
                         .fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                  //  HomeScreen()
-                      ExploreScreen()
+                    HomeScreen()
                 }
             }
         }
