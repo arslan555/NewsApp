@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = ConfigData.Package.newsPackage
+    namespace = ConfigData.Package.bookmarkPackage
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
@@ -18,15 +18,15 @@ android {
     }
 
     buildTypes {
-        release {
+    release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile(ConfigData.defaultProguardFileName),
+           getDefaultProguardFile(ConfigData.defaultProguardFileName),
                 ConfigData.proguardRules
             )
         }
     }
-    buildFeatures {
+   buildFeatures {
         compose = true
     }
     composeOptions {
@@ -49,11 +49,6 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
-
-    implementation(project(Deps.Modules.path to Deps.Modules.Feature.home))
-    implementation(project(Deps.Modules.path to Deps.Modules.Feature.explore))
-    implementation(project(Deps.Modules.path to Deps.Modules.Feature.bookmark))
-
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
