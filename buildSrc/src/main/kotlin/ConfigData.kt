@@ -19,6 +19,7 @@ object ConfigData {
         const val utilsPackage = "com.arslan.utils"
         const val navigationPackage = "com.arslan.navigation"
         const val newsPackage = "com.arslan.news"
+        const val homePackage = "com.arslan.home"
         const val newsDetailsPackage = "com.arslan.news_details"
         const val onBoardingPackage = "com.arslan.onboarding"
     }
