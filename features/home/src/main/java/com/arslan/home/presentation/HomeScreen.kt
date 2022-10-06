@@ -1,4 +1,4 @@
-package com.arslan.news.presentation
+package com.arslan.home.presentation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,7 @@ import timber.log.Timber
 
 @SuppressLint("ComposableNaming")
 @Composable
-fun HomeScreen() {
+ fun HomeScreen() {
     Scaffold(modifier = Modifier.padding(top = 24.dp, start = 24.dp, end = 24.dp),
         topBar = { NewsTopBar() },
         content = {
