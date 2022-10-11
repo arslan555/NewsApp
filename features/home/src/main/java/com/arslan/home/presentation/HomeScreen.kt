@@ -23,7 +23,7 @@ import timber.log.Timber
                 }) {
                     Timber.i(it)
                 }
-                LatestNews(){
+                LatestNews {
                     Timber.i("See All")
                 }
             }
