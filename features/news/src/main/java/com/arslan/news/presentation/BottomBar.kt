@@ -1,9 +1,7 @@
 package com.arslan.news.presentation
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomBarScreen(
@@ -17,15 +15,21 @@ sealed class BottomBarScreen(
         icon = Icons.Default.Home
     )
 
+    object Explore : BottomBarScreen(
+        route = "explore",
+        title = "Explore",
+        icon = Icons.Default.Search
+    )
+
+    object Bookmark : BottomBarScreen(
+        route = "bookmark",
+        title = "Bookmark",
+        icon = Icons.Default.Favorite
+    )
+
     object Profile : BottomBarScreen(
         route = "profile",
         title = "Profile",
         icon = Icons.Default.Person
-    )
-
-    object Settings : BottomBarScreen(
-        route = "settings",
-        title = "Settings",
-        icon = Icons.Default.Settings
     )
 }

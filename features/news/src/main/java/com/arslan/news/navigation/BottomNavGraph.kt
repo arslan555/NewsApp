@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.arslan.bookmark.presentation.BookmarkScreen
+import com.arslan.explore.presentation.ExploreScreen
 import com.arslan.home.presentation.HomeScreen
 import com.arslan.news.presentation.BottomBarScreen
 
@@ -16,11 +18,14 @@ fun BottomNavGraph(navController: NavHostController) {
         composable(route = BottomBarScreen.Home.route) {
             HomeScreen()
         }
-    /*    composable(route = BottomBarScreen.Profile.route) {
-            ProfileScreen()
+        composable(route = BottomBarScreen.Explore.route) {
+            ExploreScreen()
         }
-        composable(route = BottomBarScreen.Settings.route) {
-            SettingsScreen()
-        }*/
+        composable(route = BottomBarScreen.Bookmark.route) {
+            BookmarkScreen()
+        }
+        composable(route = BottomBarScreen.Profile.route) {
+
+        }
     }
 }

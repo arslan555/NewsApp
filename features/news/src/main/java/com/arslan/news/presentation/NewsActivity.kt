@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.arslan.explore.presentation.ExploreScreen
-import com.arslan.home.presentation.HomeScreen
 import com.arslan.resources.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +22,7 @@ class NewsActivity : ComponentActivity() {
                         .fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    HomeScreen()
+                    NewsScreen()
                 }
             }
         }
