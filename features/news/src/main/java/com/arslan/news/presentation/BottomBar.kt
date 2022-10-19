@@ -1,35 +1,34 @@
 package com.arslan.news.presentation
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.annotation.DrawableRes
+import com.arslan.resources.R
 
 sealed class BottomBarScreen(
     val route: String,
     val title: String,
-    val icon: ImageVector
+    @DrawableRes val icon: Int
 ) {
     object Home : BottomBarScreen(
         route = "home",
         title = "Home",
-        icon = Icons.Default.Home
+        icon = R.drawable.tab_home
     )
 
     object Explore : BottomBarScreen(
         route = "explore",
         title = "Explore",
-        icon = Icons.Default.Search
+        icon = R.drawable.tab_explore
     )
 
     object Bookmark : BottomBarScreen(
         route = "bookmark",
         title = "Bookmark",
-        icon = Icons.Default.Favorite
+        icon = R.drawable.tab_bookmark
     )
 
     object Profile : BottomBarScreen(
         route = "profile",
         title = "Profile",
-        icon = Icons.Default.Person
+        icon = R.drawable.tab_profile
     )
 }
