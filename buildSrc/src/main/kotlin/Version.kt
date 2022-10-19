@@ -9,6 +9,7 @@ object Version {
     const val composeConstraintLayout = "1.0.1"
     const val composeActivity = "1.3.1"
     const val composeMaterial = "1.1.1"
+    const val composeNavigation = "2.4.0-alpha10"
     const val daggerHilt = "2.38.1"
     const val retrofit = "2.9.0"
     const val okHttp = "3.13.1"

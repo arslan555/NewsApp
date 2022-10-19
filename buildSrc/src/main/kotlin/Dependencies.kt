@@ -17,12 +17,13 @@ object Deps {
     val appCompat by lazy { "androidx.appcompat:appcompat:${Version.appCompat}" }
 
     object Compose {
-        val composeActivity by lazy { "androidx.activity:activity-compose:${Version.composeActivity}" }
-        val composeUI by lazy { "androidx.compose.ui:ui:${Version.compose}" }
-        val composeToolingPreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.composeTooling}" }
-        val composeTooling by lazy { "androidx.compose.ui:ui-tooling:${Version.composeTooling}" }
-        val composeMaterial by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
-        val composeConstraintLayout by lazy { "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraintLayout}" }
+        val activity by lazy { "androidx.activity:activity-compose:${Version.composeActivity}" }
+        val ui by lazy { "androidx.compose.ui:ui:${Version.compose}" }
+        val toolingPreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.composeTooling}" }
+        val tooling by lazy { "androidx.compose.ui:ui-tooling:${Version.composeTooling}" }
+        val material by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
+        val constraintLayout by lazy { "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraintLayout}" }
+        val navigation by lazy { "androidx.navigation:navigation-compose:${Version.composeNavigation}" }
     }
 
     object DaggerHilt {
