@@ -65,7 +65,6 @@ dependencies {
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
 
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.news))
-    implementation(project(Deps.Modules.path to Deps.Modules.Feature.newsDetails))
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.onboarding))
 
     implementation(project(Deps.Modules.path to Deps.Modules.navigation))

@@ -74,7 +74,6 @@ object Deps {
         object Feature {
             private const val features = ":features:"
             const val news = "${features}news"
-            const val newsDetails = "${features}news_details"
             const val onboarding = "${features}onboarding"
             const val home = "${features}home"
             const val explore = "${features}explore"
