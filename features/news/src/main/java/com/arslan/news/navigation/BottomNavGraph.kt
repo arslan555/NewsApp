@@ -8,6 +8,7 @@ import com.arslan.bookmark.presentation.BookmarkScreen
 import com.arslan.explore.presentation.ExploreScreen
 import com.arslan.home.presentation.HomeScreen
 import com.arslan.news.presentation.BottomBarScreen
+import com.arslan.profile.presentation.ProfileScreen
 
 @Composable
 fun BottomNavGraph(navController: NavHostController) {
@@ -25,7 +26,7 @@ fun BottomNavGraph(navController: NavHostController) {
             BookmarkScreen()
         }
         composable(route = BottomBarScreen.Profile.route) {
-
+                ProfileScreen()
         }
     }
 }

@@ -22,7 +22,7 @@ object ConfigData {
         const val homePackage = "com.arslan.home"
         const val explorePackage = "com.arslan.explore"
         const val bookmarkPackage = "com.arslan.bookmark"
-        const val newsDetailsPackage = "com.arslan.news_details"
+        const val profilePackage = "com.arslan.profile"
         const val onBoardingPackage = "com.arslan.onboarding"
     }
 

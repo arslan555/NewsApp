@@ -53,6 +53,7 @@ dependencies {
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.home))
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.explore))
     implementation(project(Deps.Modules.path to Deps.Modules.Feature.bookmark))
+    implementation(project(Deps.Modules.path to Deps.Modules.Feature.profile))
 
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)

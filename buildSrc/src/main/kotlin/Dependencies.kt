@@ -78,6 +78,7 @@ object Deps {
             const val home = "${features}home"
             const val explore = "${features}explore"
             const val bookmark = "${features}bookmark"
+            const val profile = "${features}profile"
         }
 
         const val navigation = ":navigation"
