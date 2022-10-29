@@ -12,6 +12,7 @@ import retrofit2.HttpException
 
 import retrofit2.Response
 import timber.log.Timber
+import java.io.IOException
 import java.net.SocketTimeoutException
 import javax.inject.Inject
 
@@ -35,7 +36,7 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
             } else {
                 val type = object : TypeToken<ErrorResponse>() {}.type
                 val errorResponse = Gson().fromJson<T>(response.errorBody()!!.charStream(), type)
-                ApiError(response.code(), errorResponse)
+                ApiError(response.message(), errorResponse)
             }
         } catch (e: JsonSyntaxException) {
             Timber.e("JsonSyntaxException ${e.message} for request ${request.endPoint()}")
@@ -48,6 +49,9 @@ class RetrofitRequestExecutor @Inject constructor(private val apiInterface: ApiI
             ApiException(e)
         } catch (e: SocketTimeoutException) {
             Timber.e("SocketTimeOutException ${e.message} for request ${request.endPoint()}")
+            ApiException(e)
+        } catch (e: IOException) {
+            Timber.e("IOException ${e.message} for request ${request.endPoint()}")
             ApiException(e)
         } catch (e: Throwable) {
             Timber.e("General Exception ${e.message} for request ${request.endPoint()}")

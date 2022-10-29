@@ -49,6 +49,9 @@ dependencies {
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.resources))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
+    implementation(project(Deps.Modules.path to Deps.Modules.Common.network))
+    implementation(project(mapOf(Deps.Modules.path to Deps.Modules.Common.data)))
+    implementation(Deps.Retrofit.gsonConverter)
     kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
