@@ -11,7 +11,8 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class HomeRepositoryImpl @Inject constructor(
-    @Dispatcher(CoroutineDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(CoroutineDispatchers.IO)
+    private val ioDispatcher: CoroutineDispatcher,
     private val homeRemoteDataSource: HomeRemoteDataSource
 ) : HomeRepository {
     override suspend fun getHeadlinesStream(): Flow<DataState<TopHeadlines>> =
