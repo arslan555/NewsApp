@@ -1,8 +1,8 @@
 plugins {
     id(Plugin.library)
     id(Plugin.kotlinAndroid)
-    id(Plugin.daggerHilt)
-    kotlin(Plugin.kapt)
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -45,15 +45,23 @@ dependencies {
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
-    implementation(Deps.DaggerHilt.core)
+
+    api(Deps.Compose.hilt)
+    api(Deps.Compose.lifecycle)
+    api(Deps.Compose.runtimeCompose)
+    api(Deps.Compose.compilerCompose)
+    api(Deps.Compose.uiTooling)
+    api(Deps.Compose.navigation)
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
     api(Deps.Compose.activity)
     api(Deps.Compose.ui)
-    api(Deps.Compose.navigation)
     api(Deps.Compose.material)
     api(Deps.Compose.constraintLayout)
     debugApi(Deps.Compose.tooling)
     api(Deps.Compose.toolingPreview)
-    kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)

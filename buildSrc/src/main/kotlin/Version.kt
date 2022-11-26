@@ -1,5 +1,5 @@
 object Version {
-    const val gradlePlugin = "7.4.0-alpha01"
+    const val gradlePlugin = "7.3.1"
 
     const val kotlin = "1.6.10"
     const val core = "1.7.0"
@@ -9,8 +9,11 @@ object Version {
     const val composeConstraintLayout = "1.0.1"
     const val composeActivity = "1.3.1"
     const val composeMaterial = "1.1.1"
-    const val composeNavigation = "2.4.0-alpha10"
+    const val composeNavigation = "2.5.3"
+    const val composeHilt = "1.0.0"
+    const val composeLifecycle = "2.5.1"
     const val daggerHilt = "2.38.1"
+    const val daggerPluginHilt = "2.42"
     const val retrofit = "2.9.0"
     const val okHttp = "3.13.1"
     const val timber = "5.0.1"

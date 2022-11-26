@@ -1,5 +1,5 @@
 object Gradle {
-    val daggerHilt by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Version.daggerHilt}" }
+    val daggerHilt by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Version.daggerPluginHilt}" }
 }
 
 object Plugin {
@@ -24,11 +24,17 @@ object Deps {
         val material by lazy { "androidx.compose.material:material:${Version.composeMaterial}" }
         val constraintLayout by lazy { "androidx.constraintlayout:constraintlayout-compose:${Version.composeConstraintLayout}" }
         val navigation by lazy { "androidx.navigation:navigation-compose:${Version.composeNavigation}" }
+        val hilt by lazy { "androidx.hilt:hilt-navigation-compose:${Version.composeHilt}" }
+        val lifecycle by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeLifecycle}" }
+        val runtimeCompose by lazy { "androidx.compose.runtime:runtime:1.2.1" }
+        val compilerCompose by lazy { "androidx.compose.compiler:compiler:1.3.1" }
+        val uiTooling by lazy { "androidx.compose.ui:ui-tooling:1.2.1" }
     }
 
     object DaggerHilt {
         val core by lazy { "com.google.dagger:hilt-android:${Version.daggerHilt}" }
-        val compiler by lazy { "com.google.dagger:hilt-android-compiler:${Version.daggerHilt}" }
+        val compiler by lazy { "com.google.dagger:hilt-compiler:${Version.daggerHilt}" }
+        val hiltCommon by lazy { "androidx.hilt:hilt-common:1.0.0" }
     }
 
     object Retrofit {
