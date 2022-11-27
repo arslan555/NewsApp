@@ -1,8 +1,8 @@
 plugins {
     id(Plugin.library)
     id(Plugin.kotlinAndroid)
-    id(Plugin.daggerHilt)
-    kotlin(Plugin.kapt)
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -39,10 +39,10 @@ dependencies {
 
     implementation(Deps.core)
     implementation(Deps.appCompat)
-    implementation(Deps.DaggerHilt.core)
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation(Deps.Coroutine.android)
     api(Deps.Timber.log)
-    kapt(Deps.DaggerHilt.compiler)
     testImplementation(Deps.Tests.jUnit)
     androidTestImplementation(Deps.AndroidTest.extJUnit)
     androidTestImplementation(Deps.AndroidTest.espresso)

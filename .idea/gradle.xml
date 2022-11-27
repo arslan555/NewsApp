@@ -7,23 +7,26 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/data" />
             <option value="$PROJECT_DIR$/common/database" />
             <option value="$PROJECT_DIR$/common/datastore" />
             <option value="$PROJECT_DIR$/common/network" />
             <option value="$PROJECT_DIR$/common/resources" />
             <option value="$PROJECT_DIR$/common/utils" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/bookmark" />
             <option value="$PROJECT_DIR$/features/explore" />
             <option value="$PROJECT_DIR$/features/home" />
             <option value="$PROJECT_DIR$/features/news" />
-            <option value="$PROJECT_DIR$/features/news_details" />
             <option value="$PROJECT_DIR$/features/onboarding" />
+            <option value="$PROJECT_DIR$/features/profile" />
             <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>
