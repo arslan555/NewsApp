@@ -8,6 +8,7 @@ object Plugin {
     val android by lazy { "android" }
     val kotlinAndroid by lazy { "org.jetbrains.kotlin.android" }
     val daggerHilt by lazy { "dagger.hilt.android.plugin" }
+    val daggerHiltLib by lazy { "com.google.dagger.hilt.android" }
     val kapt by lazy { "kapt" }
 }
 

@@ -9,5 +9,5 @@ plugins {
     id(Plugin.application).version(Version.gradlePlugin).apply(false)
     id(Plugin.library).version(Version.gradlePlugin).apply(false)
     id(Plugin.kotlinAndroid).version(Version.kotlin).apply(false)
-    id("com.google.dagger.hilt.android") version "2.44" apply false
+    id(Plugin.daggerHiltLib).version(Version.daggerHilt).apply(false)
 }

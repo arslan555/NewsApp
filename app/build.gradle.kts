@@ -1,8 +1,8 @@
 plugins {
     id(Plugin.application)
     id(Plugin.kotlinAndroid)
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    kotlin(Plugin.kapt)
+    id(Plugin.daggerHilt)
 }
 
 android {
@@ -56,8 +56,8 @@ dependencies {
     implementation(Deps.Compose.toolingPreview)
     implementation(Deps.Compose.material)
     implementation(Deps.Retrofit.gsonConverter)
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation(Deps.DaggerHilt.core)
+    kapt(Deps.DaggerHilt.compiler)
 
     implementation(project(Deps.Modules.path to Deps.Modules.Common.datastore))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.network))

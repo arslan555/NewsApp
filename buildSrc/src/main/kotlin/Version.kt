@@ -12,7 +12,7 @@ object Version {
     const val composeNavigation = "2.5.3"
     const val composeHilt = "1.0.0"
     const val composeLifecycle = "2.5.1"
-    const val daggerHilt = "2.38.1"
+    const val daggerHilt = "2.44"
     const val daggerPluginHilt = "2.42"
     const val retrofit = "2.9.0"
     const val okHttp = "3.13.1"
