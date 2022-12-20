@@ -1,9 +1,9 @@
 package com.arslan.home.data
 
 import com.arslan.data.DataState
-import com.arslan.home.model.TopHeadlines
+import com.arslan.home.model.TrendingNews
 import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
-    suspend fun getHeadlinesStream() : Flow<DataState<TopHeadlines>>
+    suspend fun getTrendingNewsStream() : Flow<DataState<TrendingNews>>
 }

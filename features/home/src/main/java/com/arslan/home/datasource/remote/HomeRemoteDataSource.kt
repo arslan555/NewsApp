@@ -1,7 +1,7 @@
 package com.arslan.home.datasource.remote
 
 import com.arslan.data.DataState
-import com.arslan.home.model.TopHeadlines
+import com.arslan.home.model.TrendingNews
 import com.arslan.network.RequestExecutor
 import com.arslan.network.model.ApiError
 import com.arslan.network.model.ApiException
@@ -16,6 +16,7 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
+import java.io.IOException
 import java.net.SocketTimeoutException
 
 
@@ -24,22 +25,22 @@ class HomeRemoteDataSource @Inject constructor(
     private val requestExecutor: RequestExecutor
 ) {
 
-    suspend fun getHeadlines(): Flow<DataState<TopHeadlines>> = withContext(ioDispatcher) {
+    suspend fun getTrendingNews(): Flow<DataState<TrendingNews>> = withContext(ioDispatcher) {
         flow {
-            when (val response = requestExecutor.execute<TopHeadlines>(newsHeadlinesRequest())) {
+            when (val response = requestExecutor.execute<TrendingNews>(trendingNewsRequest())) {
                 is ApiSuccess -> emit(DataState.success(response.data))
                 is ApiError -> emit(DataState.error(response.message))
                 is ApiException -> {
-                    if (response.e is SocketTimeoutException) emit(DataState.error("No Network Available"))
+                    if (response.e is SocketTimeoutException || response.e is IOException) emit(DataState.error("No Network Available"))
                     else emit(DataState.error("Something went wrong"))
                 }
             }
         }
     }
 
-    private fun newsHeadlinesRequest(): ApiRequest {
+    private fun trendingNewsRequest(): ApiRequest {
         val newsHeadlinesRequest = RequestBuilder.createBasicGetRequest(
-            "top-headlines/", object : TypeToken<TopHeadlines?>() {}.type
+            "top-headlines/", object : TypeToken<TrendingNews?>() {}.type
         )
         newsHeadlinesRequest.queryParams?.set("country", "us")
         return newsHeadlinesRequest

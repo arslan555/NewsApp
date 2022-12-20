@@ -1,6 +1,6 @@
 package com.arslan.home.model
 
-data class TopHeadlines(
+data class TrendingNews(
     val status: String = "",
     val totalResults: Int = 0,
     val articles: List<Article> = listOf()

@@ -19,9 +19,9 @@ class NewsRepo @Inject constructor(private val requestExecutor: RequestExecutor)
 
     suspend operator fun invoke() {
         when(val response =  requestExecutor.execute<NewsSources>(userRequest) ) {
-            is ApiSuccess -> Timber.d("${response.data}")
+         /*   is ApiSuccess -> Timber.d("${response.data}")
             is ApiError -> Timber.d(response.errorResponse.toString())
-            is ApiException -> Timber.e("${response.e.message}")
+            is ApiException -> Timber.e("${response.e.message}")*/
         }
     }
 
