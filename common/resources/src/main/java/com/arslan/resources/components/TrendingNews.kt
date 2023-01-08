@@ -18,6 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.arslan.model.TrendingNews
 import com.arslan.resources.R
 import com.arslan.resources.theme.black
 import com.arslan.resources.theme.purple
@@ -25,6 +26,7 @@ import com.arslan.resources.theme.purple
 @SuppressLint("ComposableNaming")
 @Composable
 fun TrendingNews(
+    article: TrendingNews.Article,
     seeAll: () -> Unit,
     trendingNews: (String) -> Unit
 ) {
@@ -53,22 +55,16 @@ fun TrendingNews(
             )
 
             Text(
-                text = "Europe",
-                style = MaterialTheme.typography.caption.copy(color = purple),
-                modifier = Modifier.padding(top = 4.dp)
-            )
-
-            Text(
-                text = "Russian warship: Moskva sinks in Black Sea ",
+                text = article.title,
                 style = MaterialTheme.typography.subtitle1.copy(color = black),
-                maxLines = 1,
+                maxLines = 2,
                 modifier = Modifier.background(MaterialTheme.colors.background)
             )
             Row(
                 modifier = Modifier.background(MaterialTheme.colors.background)
             ) {
                 Text(
-                    text = "BBC News",
+                    text =  article.source.name,
                     style = MaterialTheme.typography.h6.copy(color = purple, fontSize = 13.sp)
                 )
                 Row(
@@ -81,7 +77,7 @@ fun TrendingNews(
                     )
 
                     Text(
-                        text = "4h ago",
+                        text = article.publishedAt,
                         style = MaterialTheme.typography.caption.copy(color = purple),
                         modifier = Modifier
                             .background(MaterialTheme.colors.background)
@@ -98,7 +94,7 @@ fun TrendingNews(
 @Preview
 @Composable
 fun previewTrendingNews() {
-   TrendingNews(seeAll = {  }) {
+   TrendingNews(TrendingNews.Article(),seeAll = {  }) {
 
    }
 }

@@ -1,4 +1,4 @@
-package com.arslan.home.model
+package com.arslan.model
 
 data class TrendingNews(
     val status: String = "",

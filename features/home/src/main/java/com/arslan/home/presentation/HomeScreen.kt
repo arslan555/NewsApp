@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.arslan.home.model.TrendingNews
+import com.arslan.model.TrendingNews
 import com.arslan.resources.components.*
 import timber.log.Timber
 
@@ -27,12 +27,13 @@ fun HomeScreen(
             Column(modifier = Modifier.padding(top = 16.dp)) {
                 SearchBar()
                 if (trendingNewsUIState is TrendingNewsUIState.Success) {
-                    Content_((trendingNewsUIState as TrendingNewsUIState.Success).trendingNews)
-                }
-                TrendingNews(seeAll = {
-                    Timber.i("See All")
-                }) {
-                    Timber.i(it)
+                    TrendingNews(
+                        (trendingNewsUIState as TrendingNewsUIState.Success).trendingNews.articles[0],
+                        seeAll = {
+                            Timber.i("See All")
+                        }) {
+                        Timber.i(it)
+                    }
                 }
                 LatestNews {
                     Timber.i("See All")
@@ -49,10 +50,4 @@ fun HomeScreen(
 fun previewHomeScreen() {
     //HomeScreen()
 }
-
-@Composable
-fun Content_(news: TrendingNews) {
-    Text(text = news.articles.size.toString(), Modifier.size(50.dp))
-}
-
 

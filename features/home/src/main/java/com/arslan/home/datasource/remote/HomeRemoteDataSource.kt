@@ -1,7 +1,7 @@
 package com.arslan.home.datasource.remote
 
 import com.arslan.data.DataState
-import com.arslan.home.model.TrendingNews
+import com.arslan.model.TrendingNews
 import com.arslan.network.RequestExecutor
 import com.arslan.network.model.ApiError
 import com.arslan.network.model.ApiException

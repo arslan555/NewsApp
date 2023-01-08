@@ -75,6 +75,7 @@ object Deps {
             const val datastore = "${common}datastore"
             const val network = "${common}network"
             const val data = "${common}data"
+            const val model = "${common}model"
             const val resources = "${common}resources"
             const val utils = "${common}utils"
         }
