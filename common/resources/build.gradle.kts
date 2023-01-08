@@ -52,7 +52,7 @@ dependencies {
     api(Deps.Compose.compilerCompose)
     api(Deps.Compose.uiTooling)
     api(Deps.Compose.navigation)
-
+    implementation("io.coil-kt:coil-compose:2.1.0")
     implementation(Deps.DaggerHilt.core)
     kapt(Deps.DaggerHilt.compiler)
 

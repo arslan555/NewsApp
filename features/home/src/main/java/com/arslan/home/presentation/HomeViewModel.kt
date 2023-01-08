@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.arslan.data.DataState
 import com.arslan.home.data.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -16,20 +19,21 @@ class HomeViewModel @Inject constructor(
     private val homeRepository: HomeRepository
 ) : ViewModel() {
 
-    private var _trendingNewsUIState = MutableLiveData<TrendingNewsUIState>()
-    var trendingNewsUIState: LiveData<TrendingNewsUIState> = _trendingNewsUIState
+    private val _state = MutableStateFlow<TrendingNewsUIState>(TrendingNewsUIState.Loading)
+    val state: StateFlow<TrendingNewsUIState>
+        get() = _state
     init {
         viewModelScope.launch {
-            _trendingNewsUIState.value  = TrendingNewsUIState.Loading
+            _state.value  = TrendingNewsUIState.Loading
         homeRepository.getTrendingNewsStream().collect{ dataState ->
                when(dataState) {
                    is DataState.Success -> {
-                        _trendingNewsUIState.value = TrendingNewsUIState.Success(dataState.data)
+                       _state.value = TrendingNewsUIState.Success(dataState.data)
                        Timber.d(dataState.data.articles.toString() )
 
                    }
                    is DataState.Error -> {
-                       _trendingNewsUIState.value = TrendingNewsUIState.Error(dataState.message)
+                       _state.value = TrendingNewsUIState.Error(dataState.message)
                        Timber.d(dataState.message)
                    }
                }
