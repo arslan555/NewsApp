@@ -14,6 +14,7 @@ object ConfigData {
         const val appPackage = "com.arslan.nytimesnewsapp"
         const val databasePackage = "com.arslan.database"
         const val datastorePackage = "com.arslan.datastore"
+        const val modelPackage = "com.arslan.model"
         const val networkPackage = "com.arslan.network"
         const val dataPackage = "com.arslan.data"
         const val resourcesPackage = "com.arslan.resources"

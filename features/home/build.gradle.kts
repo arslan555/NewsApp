@@ -54,6 +54,7 @@ dependencies {
     implementation(project(Deps.Modules.path to Deps.Modules.Common.utils))
     implementation(project(Deps.Modules.path to Deps.Modules.Common.network))
     implementation(project(mapOf(Deps.Modules.path to Deps.Modules.Common.data)))
+    implementation(project(mapOf(Deps.Modules.path to Deps.Modules.Common.model)))
     implementation(Deps.Retrofit.gsonConverter)
 
     implementation(Deps.DaggerHilt.core)

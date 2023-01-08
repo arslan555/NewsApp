@@ -1,7 +1,8 @@
 package com.arslan.home.data
 
 import com.arslan.data.DataState
-import com.arslan.home.model.TrendingNews
+import com.arslan.model.TrendingNews
+
 import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
