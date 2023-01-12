@@ -43,37 +43,37 @@ internal class DateUtilsTest {
     @Test
     fun `given past time, when passing to calculatePassedTime, should return 1 hour ago`() {
         val currentTime = System.currentTimeMillis()
-        val pastTimestamp2 = currentTime - (1 * 60 * 60 * 1000) - (20 * 60 * 1000)
-        val expectedResult2 = "1 hour ago"
-        val result2 = calculatePassedTime(pastTimestamp2)
-        assertEquals(expectedResult2, result2)
+        val pastTimestamp = currentTime - (1 * 60 * 60 * 1000) - (20 * 60 * 1000)
+        val expectedResult = "1 hour ago"
+        val result = calculatePassedTime(pastTimestamp)
+        assertEquals(expectedResult, result)
     }
 
     @Test
     fun `given past time, when passing to calculatePassedTime, should return 4 hours ago`() {
         val currentTime = System.currentTimeMillis()
-        val pastTimestamp2 = currentTime - (4 * 60 * 60 * 1000) - (20 * 60 * 1000)
-        val expectedResult2 = "4 hours ago"
-        val result2 = calculatePassedTime(pastTimestamp2)
-        assertEquals(expectedResult2, result2)
+        val pastTimestamp = currentTime - (4 * 60 * 60 * 1000) - (20 * 60 * 1000)
+        val expectedResult  = "4 hours ago"
+        val result = calculatePassedTime(pastTimestamp)
+        assertEquals(expectedResult, result)
     }
 
     @Test
     fun `given past time, when passing to calculatePassedTime, should return 1 minutes ago`() {
         val currentTime = System.currentTimeMillis()
-        val pastTimestamp3 = currentTime - (1 * 60 * 1000)
-        val expectedResult3 = "1 minute ago"
-        val result3 = calculatePassedTime(pastTimestamp3)
-        assertEquals(expectedResult3, result3)
+        val pastTimestamp = currentTime - (1 * 60 * 1000)
+        val expectedResult = "1 minute ago"
+        val result = calculatePassedTime(pastTimestamp)
+        assertEquals(expectedResult, result)
     }
 
     @Test
     fun `given past time, when passing to calculatePassedTime, should return 20 minutes ago`() {
         val currentTime = System.currentTimeMillis()
-        val pastTimestamp3 = currentTime - (20 * 60 * 1000)
-        val expectedResult3 = "20 minutes ago"
-        val result3 = calculatePassedTime(pastTimestamp3)
-        assertEquals(expectedResult3, result3)
+        val pastTimestamp = currentTime - (20 * 60 * 1000)
+        val expectedResult = "20 minutes ago"
+        val result = calculatePassedTime(pastTimestamp)
+        assertEquals(expectedResult, result)
     }
 
 }
