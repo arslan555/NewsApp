@@ -2,7 +2,7 @@ package com.arslan.home.data
 
 import com.arslan.data.DataState
 import com.arslan.home.datasource.remote.HomeRemoteDataSource
-import com.arslan.home.model.TrendingNews
+import com.arslan.model.TrendingNews
 import com.arslan.utils.CoroutineDispatchers
 import com.arslan.utils.Dispatcher
 import kotlinx.coroutines.CoroutineDispatcher
