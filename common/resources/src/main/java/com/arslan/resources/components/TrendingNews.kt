@@ -22,6 +22,8 @@ import com.arslan.model.TrendingNews
 import com.arslan.resources.R
 import com.arslan.resources.theme.black
 import com.arslan.resources.theme.purple
+import com.arslan.utils.calculatePassedTime
+import com.arslan.utils.convertTimestampToLong
 
 @SuppressLint("ComposableNaming")
 @Composable
@@ -77,7 +79,7 @@ fun TrendingNews(
                     )
 
                     Text(
-                        text = article.publishedAt,
+                        text = calculatePassedTime(convertTimestampToLong(article.publishedAt)),
                         style = MaterialTheme.typography.caption.copy(color = purple),
                         modifier = Modifier
                             .background(MaterialTheme.colors.background)

@@ -46,4 +46,24 @@ class HomeRemoteDataSource @Inject constructor(
         return newsHeadlinesRequest
     }
 
+    suspend fun getLatestNews(): Flow<DataState<TrendingNews>> = withContext(ioDispatcher) {
+        flow {
+            when (val response = requestExecutor.execute<TrendingNews>(trendingNewsRequest())) {
+                is ApiSuccess -> emit(DataState.success(response.data))
+                is ApiError -> emit(DataState.error(response.message))
+                is ApiException -> {
+                    if (response.e is SocketTimeoutException || response.e is IOException) emit(DataState.error("No Network Available"))
+                    else emit(DataState.error("Something went wrong"))
+                }
+            }
+        }
+    }
+
+    private fun latestNewsRequest(): ApiRequest {
+        val newsHeadlinesRequest = RequestBuilder.createBasicGetRequest(
+            "top-headlines/", object : TypeToken<TrendingNews?>() {}.type
+        )
+        newsHeadlinesRequest.queryParams?.set("country", "us")
+        return newsHeadlinesRequest
+    }
 }

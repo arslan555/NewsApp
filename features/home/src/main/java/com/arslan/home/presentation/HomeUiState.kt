@@ -9,3 +9,9 @@ sealed interface TrendingNewsUIState {
     object Loading : TrendingNewsUIState
 }
 
+sealed interface LatestNewsUIState {
+    data class Success(val trendingNews: TrendingNews) : LatestNewsUIState
+    data class Error(val message: String) : LatestNewsUIState
+    object Loading : LatestNewsUIState
+}
+

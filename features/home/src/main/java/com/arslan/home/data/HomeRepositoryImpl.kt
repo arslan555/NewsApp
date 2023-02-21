@@ -15,8 +15,9 @@ class HomeRepositoryImpl @Inject constructor(
     private val ioDispatcher: CoroutineDispatcher,
     private val homeRemoteDataSource: HomeRemoteDataSource
 ) : HomeRepository {
-    override suspend fun getTrendingNewsStream(): Flow<DataState<TrendingNews>> =
+    override suspend fun getTrendingNews(): Flow<DataState<TrendingNews>> =
         homeRemoteDataSource.getTrendingNews().flowOn(ioDispatcher)
 
-
+    override suspend fun getLatestNews(category: String): Flow<DataState<TrendingNews>> =
+        homeRemoteDataSource.getTrendingNews().flowOn(ioDispatcher)
 }

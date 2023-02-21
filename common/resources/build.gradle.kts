@@ -57,6 +57,7 @@ dependencies {
     kapt(Deps.DaggerHilt.compiler)
 
     api(project(mapOf(Deps.Modules.path to Deps.Modules.Common.model)))
+    api(project(mapOf(Deps.Modules.path to Deps.Modules.Common.utils)))
 
     api(Deps.Compose.activity)
     api(Deps.Compose.ui)

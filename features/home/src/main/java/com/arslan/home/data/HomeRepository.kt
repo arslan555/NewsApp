@@ -6,5 +6,6 @@ import com.arslan.model.TrendingNews
 import kotlinx.coroutines.flow.Flow
 
 interface HomeRepository {
-    suspend fun getTrendingNewsStream() : Flow<DataState<TrendingNews>>
+    suspend fun getTrendingNews() : Flow<DataState<TrendingNews>>
+    suspend fun getLatestNews(category: String) : Flow<DataState<TrendingNews>>
 }
